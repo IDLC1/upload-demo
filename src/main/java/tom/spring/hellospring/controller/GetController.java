@@ -1,7 +1,9 @@
 package tom.spring.hellospring.controller;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import tom.spring.hellospring.domain.ServerSettings;
 import tom.spring.hellospring.domain.User;
 
 import javax.servlet.http.HttpServletRequest;
@@ -25,6 +27,10 @@ public class GetController {
         params.clear();
         params.put("from", from);
         params.put("to", to);
+        System.out.println(123123123);
+        System.out.println(123123123);
+        System.out.println(123123123);
+        System.out.println(123123123);
         return params;
     }
 
@@ -62,5 +68,13 @@ public class GetController {
         String id = request.getParameter("id");
         params.put("id", id);
         return params;
+    }
+
+    @Autowired
+    private ServerSettings serverSettings;
+
+    @GetMapping("v1/test_properties")
+    public Object testProperties() {
+        return serverSettings;
     }
 }
