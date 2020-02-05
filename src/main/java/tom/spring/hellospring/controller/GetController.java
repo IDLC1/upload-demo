@@ -73,8 +73,14 @@ public class GetController {
     @Autowired
     private ServerSettings serverSettings;
 
-    @GetMapping("v1/test_properties")
+    @GetMapping("api/test_properties")
     public Object testProperties() {
+        return serverSettings;
+    }
+
+    @GetMapping("api2/v1/test_properties")
+    public Object testProperties2() {
+        System.out.println("controller test_properties");
         return serverSettings;
     }
 }

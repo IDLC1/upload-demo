@@ -3,6 +3,7 @@ package tom.spring.hellospring;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.MultipartConfigFactory;
+import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.util.unit.DataSize;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +13,7 @@ import javax.servlet.MultipartConfigElement;
 
 @SpringBootApplication
 @RestController
+@ServletComponentScan
 public class HelloSpringApplication {
 
 	public static void main(String[] args) {

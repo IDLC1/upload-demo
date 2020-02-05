@@ -8,13 +8,14 @@ import java.util.Map;
 
 @RestController
 public class OtherHttpController {
-    private Map<String,Object> params = new HashMap<>();
+    private Map<String, Object> params = new HashMap<>();
 
     // 提交
     @PostMapping("/post/testUser")
     public Object test_user_post(@RequestBody User user) {
         params.clear();
         params.put("user", user);
+
         return params;
     }
 
